@@ -22,6 +22,7 @@
             android:src="@drawable/add_place"
             android:scaleType="centerInside"
             android:background="#00cf1c"
+            android:text="@string/add_place"
             />
 
         <ImageButton

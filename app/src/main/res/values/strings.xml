@@ -9,6 +9,7 @@
     <string name="title_activity_add_new_trip">add_new_trip</string>
     <string name="title_activity_list_trip">List_trip</string>
     <string name="title_activity_about_us">about_us</string>
+    <string name="add_place">Add a palce</string>
     <string-array name="categorie_array">
         <item>Mercury</item>
         <item>Venus</item>
