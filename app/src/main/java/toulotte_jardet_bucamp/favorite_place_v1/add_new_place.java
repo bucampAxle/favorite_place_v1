@@ -28,17 +28,10 @@ public class add_new_place extends ActionBarActivity {
         activity = this;
         mDbHelper = new NotesDbAdapter(this);
         mDbHelper.open();
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        final EditText type = (EditText) findViewById(R.id.type);
         final EditText adresse = (EditText) findViewById(R.id.adresse);
         final EditText titre = (EditText) findViewById(R.id.titre);
         final EditText description = (EditText) findViewById(R.id.description);
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categorie_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
         final Button mySendButton = (Button) findViewById(R.id.button);
         final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
 
@@ -49,15 +42,15 @@ public class add_new_place extends ActionBarActivity {
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String formattedDate = df.format(c.getTime());
-                mDbHelper.createNote( adresse.getText().toString(), description.getText().toString(), spinner.getSelectedItem().toString(), adresse.getText().toString(),formattedDate); //1
+                mDbHelper.createNote( titre.getText().toString(), description.getText().toString(), type.getText().toString(), adresse.getText().toString(),formattedDate); //1
 
-                builder1.setMessage("votre lieu à bien était sauvegarder," +
-                        "vouler vous vous le retrouver dans la list des lieux");
+                builder1.setMessage("votre lieu à bien été sauvegardé," +
+                        "voulez vous afficher la liste des lieux maintenant ?");
                 builder1.setCancelable(true);
 
 
                 builder1.setPositiveButton(
-                        "Yes",
+                        "Oui",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
@@ -67,7 +60,7 @@ public class add_new_place extends ActionBarActivity {
                         });
 
                 builder1.setNegativeButton(
-                        "No",
+                        "Non",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 

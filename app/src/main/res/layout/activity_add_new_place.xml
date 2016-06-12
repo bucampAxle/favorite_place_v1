@@ -18,27 +18,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/adresse"
-            android:text="adresse" />
-
+            android:id="@+id/type"
+            android:hint="Catégorie" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/description"
-            android:text="description" />
+            android:id="@+id/adresse"
+            android:hint="Adresse"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/titre"
-            android:text="title" />
+            android:hint="Titre" />
 
-        <Spinner
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:spinnerMode="dropdown" />
+            android:id="@+id/description"
+            android:hint="Description" />
 
         <Button
             android:layout_width="191dp"
